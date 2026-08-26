@@ -270,11 +270,16 @@
 
   .wordmark .juice { color: var(--brown); }
 
+  /* Julian wants the break after "soul," rather than wherever it lands. The
+     two clauses are inline-blocks: each stays whole while it fits, so on a
+     wide screen you get one clause per line, and on a phone the first one
+     wraps inside itself instead of overflowing. No hard break, no nowrap. */
+  .lede span { display: inline-block; }
+
   .lede {
     font-size: var(--step-1);
     line-height: 1.5;
-    max-width: 46ch;
-    text-wrap: balance;
+    max-width: 56ch;
     margin: 1.3rem 0 0;
     color: var(--ink-soft);
   }
@@ -743,7 +748,7 @@
         <span class="juice"><span class="st2">J</span><span class="st4">u</span><span class="st1">i</span><span class="st3">c</span><span class="st2">e</span></span>
       </h1>
 
-      <p class="lede">Guitar, double bass, vocals. New Orleans infused soul, at whatever energy the room needs.</p>
+      <p class="lede"><span>Guitar, double bass, vocals. New Orleans infused soul,</span> <span>at whatever energy the room needs.</span></p>
 
       <div class="hero-meta">
         <span>Duo &middot; Trio &middot; Full band</span>
