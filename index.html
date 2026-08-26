@@ -276,6 +276,9 @@
      wraps inside itself instead of overflowing. No hard break, no nowrap. */
   .lede span { display: inline-block; }
 
+  .intro-line { text-wrap: pretty; }
+  .intro-line + .intro-line { margin-top: 0.8rem; }
+
   .lede {
     font-size: var(--step-1);
     line-height: 1.5;
@@ -847,7 +850,8 @@
       <div>
         <p class="eyebrow">Listen</p>
         <h2>Live video</h2>
-        <p>Recorded live. What you see is what you get! Click a title to play it here.</p>
+        <p class="intro-line">Recorded live. What you see is what you get!</p>
+        <p class="intro-line">Click a title to play it here.</p>
       </div>
 
       <div class="aside-art art-frame">
