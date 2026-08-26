@@ -23,6 +23,19 @@
     /* the hero plate needs no help on a light page */
     --hero-filter: none;
     --hero-mask:   none;
+
+    /* the hero owns its own band rather than taking a step of the sky scale,
+       because on the dark theme it is a lit panel rather than a darker one */
+    --hero-bg:        #F7F4EE;
+    --hero-glow:      none;
+    --hero-ink:       #24241F;
+    --hero-ink-soft:  #545850;
+    --hero-ink-faint: #646760;
+    --hero-sage:      #6F7C72;
+    --hero-accent:    #7A5334;
+    --hero-paper:     #F2EEE7;
+    --hero-line:      #C6BBA9;
+
     --sky-1:     #F7F4EE;
     --sky-2:     #F2EEE7;
     --sky-3:     #EEE9E1;
@@ -66,7 +79,45 @@
       --hero-filter: none;
       --hero-mask:   none;
 
-      --sky-1:     #3C3C33;
+
+      /* Julian's option H. juice-4 is a scene of pale paper washes, so against a
+         dark band it always read as a cutout no matter how the tone was tuned.
+         The fix is to give it a lit panel of its own, in the artwork's own paper
+         (its washes average #DFCAB3), with the glow falling off from the lamp so
+         nothing in the frame is a flat plane. The hero's text tokens flip to the
+         dark set for the same reason. Between roughly #6B5C4A and #9C8B75
+         neither light nor dark text clears 4.5:1 on the panel, so there is no
+         middle ground to retreat to — it is a lit panel or a dark one. */
+      --hero-bg:        #D2C4AE;
+      --hero-glow:      radial-gradient(80% 70% at 50% 62%, #E5DAC8 0%, #D8CBB7 45%, rgba(210, 196, 174, 0) 82%);
+      --hero-ink:       #24241F;
+      --hero-ink-soft:  #545850;
+      --hero-ink-faint: #5E6157;
+      --hero-sage:      #5F6C62;
+      --hero-accent:    #7A5334;
+      --hero-paper:     #F2EEE7;
+      --hero-line:      #BCAE96;
+
+  
+    /* Julian's option H. juice-4 is a scene of pale paper washes, so against a
+       dark band it always read as a cutout no matter how the tone was tuned.
+       The fix is to give it a lit panel of its own, in the artwork's own paper
+       (its washes average #DFCAB3), with the glow falling off from the lamp so
+       nothing in the frame is a flat plane. The hero's text tokens flip to the
+       dark set for the same reason. Between roughly #6B5C4A and #9C8B75
+       neither light nor dark text clears 4.5:1 on the panel, so there is no
+       middle ground to retreat to — it is a lit panel or a dark one. */
+    --hero-bg:        #D2C4AE;
+    --hero-glow:      radial-gradient(80% 70% at 50% 62%, #E5DAC8 0%, #D8CBB7 45%, rgba(210, 196, 174, 0) 82%);
+    --hero-ink:       #24241F;
+    --hero-ink-soft:  #545850;
+    --hero-ink-faint: #5E6157;
+    --hero-sage:      #5F6C62;
+    --hero-accent:    #7A5334;
+    --hero-paper:     #F2EEE7;
+    --hero-line:      #BCAE96;
+
+    --sky-1:     #3C3C33;
       --sky-2:     #2B2B24;
       --sky-3:     #252520;
       --sky-4:     #1F1F19;
@@ -166,7 +217,19 @@
 
   .hero {
     padding-block: clamp(2.5rem, 7vw, 4.5rem) clamp(2rem, 5vw, 3.5rem);
-    border-bottom: 1px solid var(--line);
+    background-color: var(--hero-bg);
+    background-image: var(--hero-glow);
+    border-bottom: 1px solid var(--hero-line);
+
+    /* everything inside the hero reads its colour from these, so redefining
+       them here is all it takes to flip the panel's text with the panel */
+    --ink:       var(--hero-ink);
+    --ink-soft:  var(--hero-ink-soft);
+    --ink-faint: var(--hero-ink-faint);
+    --sage:      var(--hero-sage);
+    --accent:    var(--hero-accent);
+    --paper:     var(--hero-paper);
+    color: var(--ink);
   }
 
   /* the picture runs wider than the text column it sits under. Its edges are
@@ -671,7 +734,7 @@
 </style>
 </head>
 <body>
-<header class="hero sky-1">
+<header class="hero">
   <div class="wrap">
       <p class="eyebrow">Acoustic duo &middot; New Orleans infused soul</p>
 
