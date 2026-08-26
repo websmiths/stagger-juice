@@ -19,6 +19,10 @@
     --paper-2:   #FAF8F3;
     --paper-3:   #E7E0D5;
 
+
+    /* the hero plate needs no help on a light page */
+    --hero-filter: none;
+    --hero-mask:   none;
     --sky-1:     #F7F4EE;
     --sky-2:     #F2EEE7;
     --sky-3:     #EDE8DF;
@@ -53,7 +57,21 @@
       --paper-2:   #22221D;
       --paper-3:   #2B2B24;
 
-      --sky-1:     #24241E;
+
+      /* juice-4 is a full scene of pale paper washes, not a tight ink sketch.
+         On the near-black page it floated as a light slab instead of sitting
+         in the dark, so on dark themes only it is dimmed and its edges are
+         dissolved. Julian raised this; do not drop it. */
+      --hero-filter: brightness(0.75) contrast(1.12) saturate(1.08);
+      --hero-mask:   radial-gradient(115% 112% at 50% 50%, #000 58%, transparent 100%);
+  
+    /* juice-4 is a full scene of pale paper washes, not a tight ink sketch.
+       On the near-black page it floated as a light slab instead of sitting
+       in the dark, so on dark themes only it is dimmed and its edges are
+       dissolved. Julian raised this; do not drop it. */
+    --hero-filter: brightness(0.75) contrast(1.12) saturate(1.08);
+    --hero-mask:   radial-gradient(115% 112% at 50% 50%, #000 58%, transparent 100%);
+    --sky-1:     #24241E;
       --sky-2:     #212119;
       --sky-3:     #1D1D16;
       --sky-4:     #1A1A13;
@@ -161,6 +179,9 @@
   .hero-art .art {
     max-height: min(76vh, 700px);
     object-fit: contain;
+    filter: var(--hero-filter);
+    -webkit-mask-image: var(--hero-mask);
+            mask-image: var(--hero-mask);
   }
 
   .wordmark {
