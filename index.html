@@ -25,15 +25,15 @@
     --hero-mask:   none;
     --sky-1:     #F7F4EE;
     --sky-2:     #F2EEE7;
-    --sky-3:     #EDE8DF;
-    --sky-4:     #E8E2D7;
-    --sky-5:     #E3DCCF;
-    --sky-6:     #DDD5C6;
+    --sky-3:     #EEE9E1;
+    --sky-4:     #EAE4DA;
+    --sky-5:     #E5DFD3;
+    --sky-6:     #E1DACC;
 
     --ink:       #24241F;
     --ink-soft:  #545850;
-    --ink-faint: #86897F;
-    --line:      #D6CEC1;
+    --ink-faint: #646760;
+    --line:      #C6BBA9;
     --sage:      #6F7C72;
     --sand:      #D2AE8E;
     --brown:     #7A5334;
@@ -57,30 +57,26 @@
       --paper-2:   #22221D;
       --paper-3:   #2B2B24;
 
+      /* juice-4 is a scene of pale paper washes, not a tight ink sketch like the
+         bass and the guitar, so on the night page it floated as a light slab
+         rather than sitting in it. Julian's fix, and the right one: give it a
+         lighter panel to sit on. --sky-1 is well above the rest of the scale
+         here, and the ramp picks up from --sky-2. Dimming and masking the plate
+         was my first attempt and is no longer needed. */
+      --hero-filter: none;
+      --hero-mask:   none;
 
-      /* juice-4 is a full scene of pale paper washes, not a tight ink sketch.
-         On the near-black page it floated as a light slab instead of sitting
-         in the dark, so on dark themes only it is dimmed and its edges are
-         dissolved. Julian raised this; do not drop it. */
-      --hero-filter: brightness(0.75) contrast(1.12) saturate(1.08);
-      --hero-mask:   radial-gradient(115% 112% at 50% 50%, #000 58%, transparent 100%);
-  
-    /* juice-4 is a full scene of pale paper washes, not a tight ink sketch.
-       On the near-black page it floated as a light slab instead of sitting
-       in the dark, so on dark themes only it is dimmed and its edges are
-       dissolved. Julian raised this; do not drop it. */
-    --hero-filter: brightness(0.75) contrast(1.12) saturate(1.08);
-    --hero-mask:   radial-gradient(115% 112% at 50% 50%, #000 58%, transparent 100%);
-    --sky-1:     #24241E;
-      --sky-2:     #212119;
-      --sky-3:     #1D1D16;
-      --sky-4:     #1A1A13;
-      --sky-5:     #161610;
-      --sky-6:     #13130D;
+      --sky-1:     #3C3C33;
+      --sky-2:     #2B2B24;
+      --sky-3:     #252520;
+      --sky-4:     #1F1F19;
+      --sky-5:     #191913;
+      --sky-6:     #14140E;
+
       --ink:       #EDE8DE;
       --ink-soft:  #ADAB9F;
-      --ink-faint: #82806F;
-      --line:      #37372E;
+      --ink-faint: #A6A494;
+      --line:      #4F4F43;
       --sage:      #9BA89E;
       --sand:      #D2AE8E;
       --brown:     #CDA274;
@@ -96,17 +92,26 @@
     --paper-2:   #22221D;
     --paper-3:   #2B2B24;
 
-    --sky-1:     #24241E;
-    --sky-2:     #212119;
-    --sky-3:     #1D1D16;
-    --sky-4:     #1A1A13;
-    --sky-5:     #161610;
-    --sky-6:     #13130D;
+    /* juice-4 is a scene of pale paper washes, not a tight ink sketch like the
+       bass and the guitar, so on the night page it floated as a light slab
+       rather than sitting in it. Julian's fix, and the right one: give it a
+       lighter panel to sit on. --sky-1 is well above the rest of the scale
+       here, and the ramp picks up from --sky-2. Dimming and masking the plate
+       was my first attempt and is no longer needed. */
+    --hero-filter: none;
+    --hero-mask:   none;
+
+    --sky-1:     #3C3C33;
+    --sky-2:     #2B2B24;
+    --sky-3:     #252520;
+    --sky-4:     #1F1F19;
+    --sky-5:     #191913;
+    --sky-6:     #14140E;
 
     --ink:       #EDE8DE;
     --ink-soft:  #ADAB9F;
-    --ink-faint: #82806F;
-    --line:      #37372E;
+    --ink-faint: #A6A494;
+    --line:      #4F4F43;
     --sage:      #9BA89E;
     --sand:      #D2AE8E;
     --brown:     #CDA274;
